@@ -9,6 +9,8 @@ class UserInfo1 extends StatefulWidget {
 }
 
 class UserInfo1State extends State<UserInfo1> {
+  var user_name = TextEditingController();
+  var Father_name = TextEditingController();
 
 
   @override
@@ -20,30 +22,72 @@ class UserInfo1State extends State<UserInfo1> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-              decoration:
-                InputDecoration(
-                  border:
-                    OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(21),
-                      borderSide: BorderSide(
-                        color:Colors.deepOrange
-                      )
-                    )
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Name"),
+                  SizedBox(height: 5,),
+                  TextField(
+                    controller: user_name,
+                  decoration:
+                    InputDecoration(
+                      focusedBorder:
+                      OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(21),
+                          borderSide: BorderSide(
+                              color:Colors.deepOrange,
+                            width:1.4
+                          )
+                      ) ,
+                      enabledBorder:
+                      OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(21),
+                            borderSide: BorderSide(
+                                color:Colors.blueAccent,
+                                width:1.4
+                            )
+                        ),
+
+
+
+
+                                      ),
+                  ),
+                ],
               ),
               Container(height: 25,),
-              TextField(
-                decoration:
-                InputDecoration(
-                    border:
-                    OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(21),
-                        borderSide: BorderSide(
-                            color:Colors.deepOrange
-                        )
-                    )
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Father's Name"),
+                  SizedBox(height: 5,),
+                  TextField(
+                    controller: user_name,
+                    decoration:
+                    InputDecoration(
+                      focusedBorder:
+                      OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(21),
+                          borderSide: BorderSide(
+                              color:Colors.deepOrange,
+                              width:1.4
+                          )
+                      ) ,
+                      enabledBorder:
+                      OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(21),
+                          borderSide: BorderSide(
+                              color:Colors.blueAccent,
+                              width:1.4
+                          )
+                      ),
+
+
+
+
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

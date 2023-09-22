@@ -46,7 +46,7 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
           children: [
 
             Container(
-              height: 350,
+              height: 290,
                 child: UserInfo1()),
             Container(
                 width: MediaQuery.of(context).size.width,
