@@ -19,7 +19,7 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
   updateProgress()
   {
     stepValue = stepValue + 1/(100/totalScreens);
-    ProfileSectionTop().updateProgress();
+    // ProfileSectionTop().updateProgress();
   }
 
   onClickNext()
@@ -46,7 +46,7 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
             Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height*10/100,
-                child: topSection.ProfileSectionTop(),
+                // child: topSection.ProfileSectionTop(),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
