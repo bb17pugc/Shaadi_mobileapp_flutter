@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class UesrInfoMain extends StatefulWidget {
+class UserInfoMain extends StatefulWidget {
 
-  UesrInfoMain({super.key});
+  UserInfoMain({super.key});
   @override
-  State<UesrInfoMain> createState() => UesrInfoMainState();
+  State<UserInfoMain> createState() => UserInfoMainState();
 }
 
-class UesrInfoMainState extends State<UesrInfoMain> {
+class UserInfoMainState extends State<UserInfoMain> {
 
 
   @override
