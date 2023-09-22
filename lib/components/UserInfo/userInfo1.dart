@@ -13,6 +13,40 @@ class UserInfo1State extends State<UserInfo1> {
 
   @override
   Widget build(BuildContext context) {
-    return Text("UserInfo1");
+    return Center(
+        child:
+        Container(
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+              decoration:
+                InputDecoration(
+                  border:
+                    OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(21),
+                      borderSide: BorderSide(
+                        color:Colors.deepOrange
+                      )
+                    )
+                ),
+              ),
+              Container(height: 25,),
+              TextField(
+                decoration:
+                InputDecoration(
+                    border:
+                    OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(21),
+                        borderSide: BorderSide(
+                            color:Colors.deepOrange
+                        )
+                    )
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }

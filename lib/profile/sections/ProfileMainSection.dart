@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../components/UserInfo/userInfo1.dart';
 import 'ProfileSectionBottom.dart';
 import 'ProfileSectionTop.dart';
 
@@ -43,6 +44,10 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
+            Container(
+              height: 350,
+                child: UserInfo1()),
             Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height*10/100,
