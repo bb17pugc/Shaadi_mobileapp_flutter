@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/UserMain.dart';
 import 'package:mobile/components/UserInfo/UserInfo2.dart';
 import 'package:mobile/components/UserInfo/UserInfo3.dart';
 import 'package:mobile/components/UserInfo/UserInfo4.dart';
@@ -15,6 +16,7 @@ import '../../components/UserInfo/userInfo1.dart';
 import 'ProfileSectionBottom.dart';
 import 'ProfileSectionTop.dart';
 import 'package:animations/animations.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ProfileMainSection extends StatefulWidget {
   const ProfileMainSection({super.key});
@@ -67,6 +69,7 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
       {
         if(currentScreen == totalScreens-1)
         {
+          goToMain();
           return;
         }
         setState(() {
@@ -137,4 +140,9 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  void goToMain() {
+    Navigator.push(context, PageTransition(duration: Duration(milliseconds: 500),type: PageTransitionType.rightToLeft, child: UserMain()));
+  }
+
 }

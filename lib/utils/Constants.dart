@@ -5,6 +5,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:mobile/models/AppUser.dart';
 import 'package:mobile/models/DropDown.dart';
+import 'package:mobile/models/Message.dart';
+import 'package:mobile/models/Message.dart'as UserMessage;
 
 final EdgeInsetsGeometry? SCREEN_PADDING = EdgeInsets.only(left: 10 , right: 10);
 final dynamic? GAP = SizedBox(height: 10,);
@@ -158,6 +160,13 @@ async {
   }
 }
 
+getUser()
+async {
+  print("getting user id from session");
+  dynamic appUser = await getUserSession();
+  return appUser;
+}
+
 Future<AppUser> getUserSession()
 async {
   try
@@ -199,7 +208,19 @@ showToast(String message)
       fontSize: 16.0
   );
 }
-
+UserMessage.Message getMessageInstance(){
+  return UserMessage.Message(
+    id: 0,
+    conversation_id: "",
+    description : "",
+    sent_by : getUserInstance(),
+    sent_to : getUserInstance(),
+    status: "-1",
+    created_at: "",
+    message_id: "",
+    booking_id: 0,
+  );
+}
 AppUser getUserInstance({name=""}){
   return AppUser(
       id: 0,
@@ -221,6 +242,15 @@ AppUser getUserInstance({name=""}){
       updated_at: "2023-01-01",
       unsubscribe_at: "2023-01-01"
   );
+}
+
+getProposalFilters()  {//call this async method from whereever you need
+  return [
+    "All",
+    "Recieved",
+    "Sent",
+    "Connected"
+  ];
 }
 
 getGenders()  {//call this async method from whereever you need

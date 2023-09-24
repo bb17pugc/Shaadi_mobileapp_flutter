@@ -9,9 +9,9 @@ import '../utils/Language.dart';
 class BottomNavigation extends StatefulWidget {
 
   final Function? onClickHome;
-  final Function? onClickCart;
-  final Function? onClickOrders;
-  final Function? onClickCurrentOrders;
+  final Function? onClickChat;
+  final Function? onClickProposal;
+  final Function? onClickAccount;
   final int? currentSelected;
   void onRefresh(int value)
   {
@@ -20,9 +20,9 @@ class BottomNavigation extends StatefulWidget {
 
   BottomNavigation({
       this.onClickHome=null ,
-      this.onClickCart=null ,
-      this.onClickOrders=null ,
-      this.onClickCurrentOrders=null ,
+      this.onClickChat=null ,
+      this.onClickProposal=null ,
+      this.onClickAccount=null ,
       this.currentSelected=null
 });
   @override
@@ -81,13 +81,13 @@ class _BottomNavigationState extends State<BottomNavigation>
                   setState(() {
                     currentSelected = 1;
                   });
-                  widget.onClickCart!();
+                  widget.onClickProposal!();
                 },
                 child:widget.currentSelected == 1 ?
-                Icon(Icons.sticky_note_2,size: 27,color: PrimaryColor,)
-                    : Icon(Icons.shopping_cart_outlined,size: 27,color: Colors.grey,),
+                Icon(Icons.request_page,size: 27,color: PrimaryColor,)
+                    : Icon(Icons.request_page_outlined,size: 27,color: Colors.grey,),
               ),
-              Text(LANGUAGE[0]["my_bookings"]! , style: TextStyle(fontSize: 12,color: widget.currentSelected == 1?PrimaryColor : Colors.grey ))
+              Text("Proposals" , style: TextStyle(fontSize: 12,color: widget.currentSelected == 1?PrimaryColor : Colors.grey ))
             ],
           ),
 
@@ -99,13 +99,13 @@ class _BottomNavigationState extends State<BottomNavigation>
                   setState(() {
                     currentSelected = 2;
                   });
-                  widget.onClickOrders!();
+                  widget.onClickChat!();
                 },
                 child:widget.currentSelected == 2 ?
-                Icon(Icons.shopping_bag,size: 27,color: PrimaryColor,)
-                    : Icon(Icons.history_edu_rounded,size: 27,color: Colors.grey,),
+                Icon(Icons.mail,size: 27,color: PrimaryColor,)
+                    : Icon(Icons.mail_outline,size: 27,color: Colors.grey,),
               ),
-              Text(LANGUAGE[0]["requests"]! , style: TextStyle(fontSize: 12,color: widget.currentSelected == 2?PrimaryColor : Colors.grey ))
+              Text("Chats" , style: TextStyle(fontSize: 12,color: widget.currentSelected == 2?PrimaryColor : Colors.grey ))
             ],
           ) ,
 
@@ -117,13 +117,13 @@ class _BottomNavigationState extends State<BottomNavigation>
                   setState(() {
                     currentSelected = 3;
                   });
-                  widget.onClickCurrentOrders!();
+                  widget.onClickAccount!();
                 },
                 child:widget.currentSelected == 3 ?
-                Icon(Icons.people,size: 30,color: PrimaryColor,)
-                    : Icon(Icons.delivery_dining_outlined,size: 30,color: Colors.grey,),
+                Icon(Icons.account_circle,size: 30,color: PrimaryColor,)
+                    : Icon(Icons.account_circle_outlined,size: 30,color: Colors.grey,),
               ),
-              Text(LANGUAGE[0]["chat"]! , style: TextStyle(fontSize: 12,color: widget.currentSelected == 3?PrimaryColor : Colors.grey ))
+              Text("Account" , style: TextStyle(fontSize: 12,color: widget.currentSelected == 3?PrimaryColor : Colors.grey ))
             ],
           )
         ],
