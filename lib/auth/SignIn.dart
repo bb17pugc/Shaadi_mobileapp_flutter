@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/auth/SignUp.dart';
+import 'package:mobile/profile/sections/ProfileMainSection.dart';
+import 'package:mobile/utils/Colors.dart';
 import 'package:mobile/utils/Constants.dart';
 import 'package:mobile/utils/Language.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -100,7 +103,9 @@ class _SignInState extends State<SignIn> {
             Container(
               child: ElevatedButton(
 
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, PageTransition(duration: Duration(milliseconds: 500),type: PageTransitionType.rightToLeft, child: ProfileMainSection()));
+                },
                 // style: ButtonStyle(elevation: MaterialStateProperty(12.0 )),
                 style: ElevatedButton.styleFrom(
                     primary: PrimaryColor,

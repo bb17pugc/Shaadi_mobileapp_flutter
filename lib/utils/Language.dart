@@ -1,13 +1,28 @@
 var english =
 {
-  "name" : "Name",
-  "description" : "Description",
-  "price" : "Price",
-  "add_new_service" : "Add New Service",
-  "email" : "Email",
-  "password" : "Password",
+  "login_in_your_account" : "Login to your account", // used
+  "name" : "Name", // used
+  "shopkeeper" : "ShopKeeper", // used
+  "categories" : "Categories", // used
+  "description" : "Description", // used
+  "likes" : "Shop Likes", // used
+  "rating" : "Shop Rating", // used
+  "today_visited" : "Today Visits", // used
+  "all_users" : "Shop Users", // used
+  "shop_menu" : "Shop Menu", // used
+  "out_stock" : "Out of Stock", // used
+  "shop_chat" : "Shop Chats", // used
+  "shop_noti" : "Live Message", // used
+  "account" : "Account", // used
+  "items" : "Products", // used
+  "groups" : "Groups", // used
+  "riders" : "Riders", // used
+  "chat" : "Chats", // used
+  "contact_us" : "Contact Us", // used,
+  "add_new_category" : "Add New Category", // used
+  "new_products" : "New Products", //used
   "confirm_password" : "Confirm Password",
-  "category" : "Category",
+  "category" : "Category", // used
   "login" : "Login",
   "create" : "Create",
   "account" : "Account",
@@ -130,15 +145,15 @@ var english =
   "logging_in" : "Logging In",
 
   "choose_your_location" : "Choose your location",
-  "location" : "Location",
+  "location" : "Location", //used
   "loading_map" : "Loading Map",
   "desc_click_on_map" : "Click on map to select location",
   "updating_service" : "Updating service",
   "update_service" : "Update Service",
   "updated_service" : "Service is updated successfully",
   "desc_delete" : "Are you sure to delete ?",
-  "yes" : "Yes",
-  "no" : "No",
+  "yes" : "Yes", //used
+  "no" : "No", //used
   "deleted" : "Deleted",
   "deliever_at" : "Date of event",
   "booked_at" : "Booked at",
@@ -150,8 +165,7 @@ var english =
   "updating_profile" : "Updating profile",
   "first_name" : "First Name",
   "last_name" : "Last Name",
-  "phone_1" : "Phone 1",
-  "phone_2" : "Phone 2",
+  "phone" : "Phone",
   "username" : "Username",
   "address" : "Address",
   "country" : "Country",
@@ -174,7 +188,7 @@ var english =
   "confirming_your_booking" : "Confirming your booking",
   "available_service" : "Available Services",
   "refreshing_data" : "Refreshing Summary",
-  "order_summary" : "Order Summary",
+  "order_summary" : "Order Summary", //used
   "booking_summary" : "Booking Summary",
   "booking_details" : "Booking Details",
   "customer_details" : "Customer Details",
@@ -192,7 +206,7 @@ var english =
   "chat_with_shop" : "Chat with Owner",
   "chat" : "Chat",
   "loading_chat" : "Loading Messages",
-  "close" : "Close",
+  "close" : "Close", //used
   "new_message" : "You recieved new message",
   "new_booking" : "You recieved new booking request from ",
   "booking_confirmed" : "Your booking is confirmed by ",
@@ -281,6 +295,60 @@ var english =
   "all_rights_reserved" : "All rights reserved",
   "phone_placeholder" : "e.g:300xxxxxxx,+92xxxxxxxxxx",
   "booking_declined_message" : "Your booking is declined by ",
+  "customer" : "Customer",
+  "rider" : "Rider",
+  "live" : "Live", //used
+  "accepted" : "Accept", //used
+  "ongoing" : "Ongoing", //used
+  "today" : "Today", //used
+  "delivery_fee" : "Delivery Fee", //used
+  "delivery_time_(mins)" : "Delivery Time (mins)", //used
+  "min_order_(pkr)" : "Min Order (pkr)", //used
+  "opens_at" : "Opens At", //used
+  "close_at" : "Close At", //used
+  "save" : "Save", //used
+  "shop_profile" : "Shop Profile", //used
+  "name" : "Name", //used
+  "price" : "Price", //used
+  "packing_unit" : "Packing Unit", //used
+  "in_stock_quantity" : "In Stock Quantity", //used
+  "discount" : "Discount", //used
+  "expired_at" : "Expired at", //used
+  "are_you_sure" : "Are you sure", //used
+  "label" : "Label", //used
+  "clearing_selected_images" : "clearing selected images", //used
+  "getting_user_id_from_session" : "getting user id from session", //used
+  "fifty_percent_off" : "50% OFF", //used
+  "pakistani_currency" : "Rs", //used
+  "shop_address" : "shop addressshop addressshop addressshop addressshop addressshop addressshop addressshop addressshop address", //used
+  "setting_count_value" : "setting count value", //used
+  "thirty_minutes" : "30 min", //used
+  "pakistani_rupee" : "PKR", //used
+  "item" : "Item", //used
+  "quantity" : "Quantity", //used
+  "1st_screen" : "SCREEN 1", //used
+  "next" : "Next", //used
+  "2nd_screen" : "SCREEN 2", //used
+  "Place_Order" : "Place Order", //used
+  "3rd_screen" : "SCREEN 3", //used
+  "restaurant" : "Restaurant", //used
+  "nearby" : "Nearby", //used
+  "popular" : "Popular", //used
+  "other_restaurants" : "Other Restaurants", //used
+  "restaurant_name" : "Restaurant Name", //used
+  "delete_is_clicked" : "delete is clicked", //used
+  "button_is_clicked" : "button is clicked", //used
+  "see_all" : "See All", //used
+  "mubarak_foods" : "Mubarak Foods", //used
+
+
+
+
+
+
+
+
+
   "text_overflow_check" : "Text OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow CheckText OverFlow Check"
 };
 var LANGUAGE = [english];

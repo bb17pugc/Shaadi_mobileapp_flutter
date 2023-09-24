@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mobile/auth/SignIn.dart';
 import 'package:mobile/profile/sections/ProfileMainSection.dart';
 import 'package:mobile/profile/sections/ProfileSectionTop.dart';
+import 'package:mobile/utils/Colors.dart';
 import 'package:mobile/utils/Constants.dart';
 
 void main() {
@@ -25,15 +25,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ProfileMainSection(),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
+  const MyHomePage({super.key});
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }

@@ -1,9 +1,20 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/components/UserInfo/UserInfo2.dart';
+import 'package:mobile/components/UserInfo/UserInfo3.dart';
+import 'package:mobile/components/UserInfo/UserInfo4.dart';
+import 'package:mobile/components/UserInfo/UserInfo5.dart';
+import 'package:mobile/components/UserInfo/UserInfo6.dart';
+import 'package:mobile/components/UserInfo/UserInfo7.dart';
+import 'package:mobile/components/UserInfo/UserInfo8.dart';
+import 'package:mobile/utils/Constants.dart';
 
 import '../../components/UserInfo/userInfo1.dart';
 import 'ProfileSectionBottom.dart';
 import 'ProfileSectionTop.dart';
+import 'package:animations/animations.dart';
 
 class ProfileMainSection extends StatefulWidget {
   const ProfileMainSection({super.key});
@@ -13,14 +24,59 @@ class ProfileMainSection extends StatefulWidget {
 }
 
 class _ProfileMainSectionState extends State<ProfileMainSection> {
-
+  late GlobalKey<ProfileSectionTopState> profileSectionTopState;
+  late int currentScreen = -1;
+  late bool reverse = false;
   int totalScreens = 8;
   double stepValue = 0;
 
-  updateProgress()
+  List<Widget> screens = [
+    UserInfo1(),
+    UserInfo2(),
+    UserInfo3(),
+    UserInfo4(),
+    UserInfo5(),
+    UserInfo6(),
+    UserInfo7(),
+    UserInfo8(),
+  ];
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    profileSectionTopState = GlobalKey();
+    onClickNext();
+  }
+  updateProgress({descrease=false})
   {
-    stepValue = stepValue + 1/(100/totalScreens);
-    // ProfileSectionTop().updateProgress();
+    stepValue = (100/totalScreens)/100;
+    if(descrease == true )
+      {
+        if(currentScreen == 0)
+        {
+          return;
+        }
+        stepValue = stepValue * -1;
+        setState(() {
+          reverse = true;
+          currentScreen = currentScreen == 0 ? 0 : currentScreen-1;
+        });
+
+
+      }
+    else
+      {
+        if(currentScreen == totalScreens-1)
+        {
+          return;
+        }
+        setState(() {
+          reverse = false;
+          currentScreen = currentScreen == totalScreens-1 ? 0 : currentScreen+1;
+        });
+
+      }
+    profileSectionTopState.currentState?.updateProgress(stepValue,totalScreens,currentScreen+1);
+
   }
 
   onClickNext()
@@ -29,7 +85,7 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
   }
   onClickBack()
   {
-    print("on click back is called");
+    updateProgress(descrease:true);
   }
 
 
@@ -40,6 +96,7 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
       body:
       Container(
         color: Colors.white,
+        padding: SCREEN_PADDING,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +105,25 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
             Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height*10/100,
-                // child: topSection.ProfileSectionTop(),
+                child: ProfileSectionTop(key: profileSectionTopState,stepValue:stepValue,totalScreens:totalScreens,currentScreen:currentScreen),
+            ),
+            PageTransitionSwitcher(
+              duration: Duration(seconds: 1),
+              reverse: false,
+              transitionBuilder: (
+                  Widget child,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                  ) {
+                return SharedAxisTransition(
+                  animation: animation,
+                  secondaryAnimation: secondaryAnimation,
+                  transitionType: SharedAxisTransitionType.horizontal,
+                  child: child,
+                );
+              },
+              child:screens[currentScreen]
+              ,
             ),
             Container(
               width: MediaQuery.of(context).size.width,
