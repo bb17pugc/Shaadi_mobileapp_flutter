@@ -1,3 +1,3 @@
 import 'dart:ui';
 
-dynamic PrimaryColor = Color(0xff3bb44e);
+dynamic PrimaryColor = Color(0xFFFF0606);

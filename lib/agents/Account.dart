@@ -37,7 +37,7 @@ class AccountState extends State<Account> {
                 fit: BoxFit.fitHeight,
                 width: 200,height: 200,),
             ),
-
+            GAP,
             Text("Personal Info",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 20),),
             GAP,
             Container(

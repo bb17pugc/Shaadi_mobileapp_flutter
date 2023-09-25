@@ -97,46 +97,48 @@ class _ProfileMainSectionState extends State<ProfileMainSection> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:
-      Container(
-        color: Colors.white,
-        padding: SCREEN_PADDING,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+      SingleChildScrollView(
+        child: Container(
+            color: Colors.white,
+            padding: SCREEN_PADDING,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
 
-            Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*10/100,
-                child: ProfileSectionTop(key: profileSectionTopState,stepValue:stepValue,totalScreens:totalScreens,currentScreen:currentScreen),
-            ),
-            PageTransitionSwitcher(
-              duration: Duration(seconds: 1),
-              reverse: false,
-              transitionBuilder: (
-                  Widget child,
-                  Animation<double> animation,
-                  Animation<double> secondaryAnimation,
-                  ) {
-                return SharedAxisTransition(
-                  animation: animation,
-                  secondaryAnimation: secondaryAnimation,
-                  transitionType: SharedAxisTransitionType.horizontal,
-                  child: child,
-                );
-              },
-              child:screens[currentScreen]
-              ,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height*15/100,
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height*10/100,
+                  child: ProfileSectionTop(key: profileSectionTopState,stepValue:stepValue,totalScreens:totalScreens,currentScreen:currentScreen),
+                ),
+                PageTransitionSwitcher(
+                  duration: Duration(seconds: 1),
+                  reverse: false,
+                  transitionBuilder: (
+                      Widget child,
+                      Animation<double> animation,
+                      Animation<double> secondaryAnimation,
+                      ) {
+                    return SharedAxisTransition(
+                      animation: animation,
+                      secondaryAnimation: secondaryAnimation,
+                      transitionType: SharedAxisTransitionType.horizontal,
+                      child: child,
+                    );
+                  },
+                  child:screens[currentScreen]
+                  ,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height*15/100,
 
-              child:ProfileSectionButton(onClickBack: onClickBack,onClickNext: onClickNext,),
+                  child:ProfileSectionButton(onClickBack: onClickBack,onClickNext: onClickNext,),
+                )
+              ],
             )
-          ],
-        )
-      ),
+        ),
+      )
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

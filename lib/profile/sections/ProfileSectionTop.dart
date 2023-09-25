@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/utils/Colors.dart';
 import 'package:mobile/utils/Constants.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:animations/animations.dart';
@@ -75,7 +76,7 @@ class ProfileSectionTopState extends State<ProfileSectionTop> {
                 animationDuration: 1,
                 percent: progressPercentage,
                 linearStrokeCap: LinearStrokeCap.roundAll,
-                progressColor: Colors.green,
+                progressColor: PrimaryColor,
               )
               ,
             ),

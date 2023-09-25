@@ -7,7 +7,7 @@ class CustomButton extends StatefulWidget {
   final Function? onPressed;
   final String? Label;
   late dynamic? backgroundColor = PrimaryColor,clickInput,icon;
-  CustomButton({super.key,this.clickInput=0,this.icon = null,this.backgroundColor=const Color(0xff3bb44e),this.Label="Next",this.onPressed=null,});
+  CustomButton({super.key,this.clickInput=0,this.icon = null,this.backgroundColor=const Color(0xFFFF0606),this.Label="Next",this.onPressed=null,});
   @override
   State<CustomButton> createState() => CustomButtonState();
 }

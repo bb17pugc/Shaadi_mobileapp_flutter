@@ -18,6 +18,7 @@ const SHOPKEEPER_NAME = "shopkeeper name";
 const CLICK_TYPE_DELETE = "delete";
 const CLICK_TYPE_DELETE_YES = "Yes";
 const CLICK_TYPE_DELETE_NO = "No";
+const MALE  = "Male";
 
 const kPrimaryColor = Color(0xFFFF0606);
 const Grey = Color(0xFF7A7A7A);
@@ -244,6 +245,16 @@ AppUser getUserInstance({name=""}){
   );
 }
 
+getHomeFilters()  {//call this async method from whereever you need
+  return [
+    "All",
+    "Nearby",
+    "Male",
+    "Female",
+    "Active",
+  ];
+}
+
 getProposalFilters()  {//call this async method from whereever you need
   return [
     "All",
@@ -253,10 +264,33 @@ getProposalFilters()  {//call this async method from whereever you need
   ];
 }
 
+getAgentRequestFilters()  {//call this async method from whereever you need
+  return [
+    "All",
+    "Recieved",
+    "Connected"
+  ];
+}
+
 getGenders()  {//call this async method from whereever you need
   return [
     DropDown.fromJson({"id":0 , "name" : "Male"}),
-    DropDown.fromJson({"id":1 , "name" : "Femal"}),
+    DropDown.fromJson({"id":1 , "name" : "Female"}),
+  ];
+}
+
+getPreference()
+{
+  return [
+    DropDown.fromJson({"id":0 , "name" : "Male"}),
+    DropDown.fromJson({"id":1 , "name" : "Female"}),
+  ];
+}
+
+getJahaiz()  {//call this async method from whereever you need
+  return [
+    DropDown.fromJson({"id":0 , "name" : "Yes"}),
+    DropDown.fromJson({"id":1 , "name" : "No"}),
   ];
 }
 

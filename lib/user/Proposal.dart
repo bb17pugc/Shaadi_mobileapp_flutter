@@ -22,31 +22,34 @@ class ProposalState extends State<Proposal> {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            height: 50,
-            child: Filter(getProposalFilters(),getSelectedFilters),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/4,
-            child: ListView.builder(
-              scrollDirection:Axis.vertical,
-              itemCount: 10,
-              itemBuilder: (context, i) {
-                return GestureDetector(
-                  onTap: (){
-
-                  },
-                  child: CustomItemProduct(),
-                );
-              },
+    return SingleChildScrollView(
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              height: 50,
+              child: Filter(getProposalFilters(),getSelectedFilters),
             ),
-          )
-        ],
+            GAP,
+            Container(
+              height: MediaQuery.of(context).size.height-MediaQuery.of(context).size.height/4,
+              child: ListView.builder(
+                scrollDirection:Axis.vertical,
+                itemCount: 10,
+                itemBuilder: (context, i) {
+                  return GestureDetector(
+                    onTap: (){
+
+                    },
+                    child: CustomItemProduct(),
+                  );
+                },
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -6,34 +6,23 @@ import 'package:mobile/components/UploadImages.dart';
 import 'package:mobile/utils/Constants.dart';
 import 'package:animations/animations.dart';
 
-class UserInfo2 extends StatefulWidget {
+class AgentInfo2 extends StatefulWidget {
 
-  UserInfo2({super.key});
+  AgentInfo2({super.key});
   @override
-  State<UserInfo2> createState() => UserInfo2State();
+  State<AgentInfo2> createState() => AgentInfo2State();
 }
 
-class UserInfo2State extends State<UserInfo2> {
+class AgentInfo2State extends State<AgentInfo2> {
 
   late String genderInitValue= "";
-  late String jahaizInitValue= "";
-
   late int currentScreen = 0;
   late int currentSelectedID= 0;
 
   late List<Widget> sceens = [
     getWidget(),
     getWidgetGender(),
-    getWidgetJahaiz(),
-
   ];
-
-  getSelecteJahaiz(value)
-  {
-    setState(() {
-      jahaizInitValue = getJahaiz()[value].name;
-    });
-  }
 
   getSelecteGender(value)
   {
@@ -48,23 +37,6 @@ class UserInfo2State extends State<UserInfo2> {
       alignment: Alignment.center,
       child: CustomDropDown(reduceWidth: MediaQuery.of(context).size.height/2,Close:CloseDDLGender ,width: MediaQuery.of(context).size.width,getInput: getSelecteGender,itemDDL: ddlText,listItems:getGenders()),
     );
-  }
-
-  getWidgetJahaiz()
-  {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      alignment: Alignment.center,
-      child: CustomDropDown(reduceWidth: MediaQuery.of(context).size.height/2,Close:CloseDDLJahaiz ,width: MediaQuery.of(context).size.width,getInput: getSelecteJahaiz,itemDDL: ddlText,listItems:getJahaiz()),
-    );
-  }
-
-  CloseDDLJahaiz()
-  {
-    setState(() {
-      currentScreen = 0;
-      sceens[0] = getWidget();
-    });
   }
 
   CloseDDLGender()
@@ -84,27 +56,14 @@ class UserInfo2State extends State<UserInfo2> {
     });
   }
 
-  openDDLJahaiz()
-  {
-    setState(() {
-
-      sceens[2] = getWidgetJahaiz();
-      currentScreen = 2;
-    });
-  }
-
   getWidget()
   {
     return Column(
       children: [
         UploadImages(),
-        CustomInput(initialValue:genderInitValue ,onTap: openDDLGenders,TextInputType: TextInputType.text,Label: "Gender",) ,
-        CustomInput(TextInputType: TextInputType.text,Label: "Education",) ,
-        CustomInput(TextInputType: TextInputType.text,Label: "Profession",) ,
-        CustomInput(TextInputType: TextInputType.text,Label: "Future Goals",) ,
-        genderInitValue == "" ? Text(""):
-        CustomInput(initialValue:jahaizInitValue ,onTap: openDDLJahaiz,TextInputType: TextInputType.text,Label: genderInitValue == MALE ? "Wants Jahaiz" : "Provide Jahaiz",) ,
-
+        CustomInput(initialValue:genderInitValue ,onTap: openDDLGenders,TextInputType: TextInputType.text,Label: "Parents's Status",) ,
+        CustomInput(TextInputType: TextInputType.text,Label: "Occupation",) ,
+        CustomInput(TextInputType: TextInputType.number,Label: "Age",) ,
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/agents/AgentLogin.dart';
 import 'package:mobile/auth/SignUp.dart';
 import 'package:mobile/profile/sections/ProfileMainSection.dart';
 import 'package:mobile/utils/Colors.dart';
@@ -137,7 +138,24 @@ class _SignInState extends State<SignIn> {
                  ),
                )
              ],
-           )
+           ),
+            GAP,
+            GAP,
+            Container(
+              child: ElevatedButton(
+
+                onPressed: () {
+                  Navigator.push(context, PageTransition(duration: Duration(milliseconds: 500),type: PageTransitionType.rightToLeft, child: AgentLogin()));
+                },
+                // style: ButtonStyle(elevation: MaterialStateProperty(12.0 )),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+
+                    textStyle: const TextStyle(color: Colors.black)),
+                child: const Text('Login as Agent',style: TextStyle(color: Colors.black54,fontSize: 15,fontWeight: FontWeight.bold)),
+              ),
+            ),
           ],
         ),
       ),

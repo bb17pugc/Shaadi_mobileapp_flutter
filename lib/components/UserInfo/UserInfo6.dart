@@ -61,8 +61,9 @@ class UserInfo6State extends State<UserInfo6> {
   {
     return Column(
       children: [
-        CustomInput(initialValue:IncomeTypeInitValue ,onTap: openDDLIncomeType,TextInputType: TextInputType.text,Label: "Mother Language",) ,
+        CustomInput(initialValue:IncomeTypeInitValue ,onTap: openDDLIncomeType,TextInputType: TextInputType.text,Label: "Income Type",) ,
         CustomInput(TextInputType: TextInputType.number,Label: "Write your "+IncomeTypeInitValue+" income (PKR)",) ,
+
       ],
     );
   }
